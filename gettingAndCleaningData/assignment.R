@@ -61,9 +61,9 @@ getMeasure<- function(variable){
   as.factor(tmp)
 }
 getSigName<- function(variable){
-  name<-str_extract(variable,"AccJerk|AccMag|GyroJerk|Acc|Gyro,GyroJerk|AccMag|JerkMag")
-  axis<-str_extract(variable,"X|Y|Z")
-  sigName<-ifelse(is.na(axis),paste(name),paste(name,axis,sep = "_"))
+  name<-str_extract(variable,"AccJerk-|AccMag-|GyroJerk-|Acc-|Gyro-|GyroJerk-|AccMag-|AccJerkMag-|GyroMag-|GyroJerkMag-")
+  axis<-str_extract(variable,"X$|Y$|Z$")
+  sigName<-ifelse(is.na(axis),paste(substr(name,1,nchar(name)-1)),paste(substr(name,1,nchar(name)-1),axis,sep = "_"))
   as.factor(sigName)
 }
 
@@ -73,7 +73,7 @@ complete <- rbind(train,test)
 names(complete)<- featureNames
 ## melt the complete dataset to extract the observation for every feature
 complete <- melt(complete,id.vars = c("subjectid","activity"),factorsAsStrings = T)
-#get the mean of every feature observed in the dataset grouped by subjectid and activity
+#get the mean of every feature observed in the dataset grouped by scompubjectid and activity
 complete <- dcast(complete,subjectid+activity~variable,mean)
 complete <- melt(complete,id.vars = c("subjectid","activity"))
 complete<- dplyr::mutate(complete,domain=getDomain(variable),sigpart=getSigPart(variable),measure=getMeasure(variable),signame=getSigName(variable),mean=value)
