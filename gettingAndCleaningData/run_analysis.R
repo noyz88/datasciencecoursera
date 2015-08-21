@@ -51,7 +51,7 @@ complete <- rbind(train,test)
 ## melt the complete dataset to extract the observation for every feature
 complete <- melt(complete,id.vars = c("subjectid","activity"),factorsAsStrings = F)
 #get the mean of every feature observed in the dataset grouped by subjectid and activity
-complete <- dcast(complete,subjectid+activity+variable,mean)
+complete <- dcast(complete,subjectid+activity~variable,mean)
 #assign the correct names to the final variables
 names(complete)<- featureNames
 write.table(complete,file="tidydata.txt",row.names = FALSE)
