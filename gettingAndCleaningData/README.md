@@ -42,9 +42,9 @@ the output of this transformation looks something like this
 |       24   |         LAYING          | fBodyGyro-std()-Y |-0.95719323|
 |      26   |WALKING_UPSTAIRS     |     tBodyGyroMag-std() |-0.55273748|
 |      14   |         SITTING     |     fBodyGyro-mean()-X |-0.91738699|
- |      28  |WALKING_UPSTAIRS       |    tBodyAcc-mean()-Y |-0.01546291|
- |      12  |WALKING_UPSTAIRS |fBodyBodyGyroJerkMag-mean() |-0.77912834|
- |      14  |        SITTING     |  tBodyGyroJerk-std()-X |-0.98888952|
+|      28  |WALKING_UPSTAIRS       |    tBodyAcc-mean()-Y |-0.01546291|
+|      12 |WALKING_UPSTAIRS |fBodyBodyGyroJerkMag-mean() |-0.77912834|
+|      14  |        SITTING     |  tBodyGyroJerk-std()-X |-0.98888952|
       
  
    
