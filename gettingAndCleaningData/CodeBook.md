@@ -24,8 +24,13 @@ The relevant files used to generate the data collection are:
 
 
 ## Feature Selection
-The assignment states to extract only the mean and average of the standard deviation values each feature in the original dataset .Therefore the criteria to select the features  in the original dataset was to take all the features which have the substring "mean()" and "std()" contained in their names. Moreover the variables identifying the subject performing the activity and the activity performed were added to the dataset. The data is presented in a wide form where e the average of the variables over the subjectid and the activity are stored in separate columns . For a more detailed  description of the original features  please refer to the README file of the original dataset
+The assignment states to extract only the mean and average of the standard deviation values each feature in the original dataset .Therefore the criteria to select the features  in the original dataset was to take all the features which have the substring "mean()" and "std()" contained in their names. Moreover the variables identifying the subject performing the activity and the activity performed were added to the dataset. The data is presented in a wide form where e the average of the variables over the subjectid and the activity are stored in separate columns . For a more detailed  description of the original features  please refer to the README file of the original dataset. All the variables describing the avg values have been named according to the following pattern:
 
+  - avg_{sig_name}_{measure}{_x|y|z}? where
+    - signame : refers to the name of the signal the avg has been computed on( e.g tbodyacc,tgravityacc ecc)
+    - measure : refers to the value estimated for the variable. Can be one of "mean" and "stddev" to denote respectively the mean and the standard deviation   
+    - axis: the last part of the name if present denotes the axis component of the signal
+  
 
 ## 
 
