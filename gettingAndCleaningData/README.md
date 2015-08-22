@@ -3,6 +3,13 @@
 the purpose of this file is to describe the series of transformations performed in the script assignment.R file on the original dataset in order to obtain the final dataset. The script assumes that the dataset has been downloaded and unzipped and that the unzipped directory has been set as the current working directory in your R session. The script then generate a tidy dataset in a file "tidydata.txt" that meets the principle of tidy data since :
  - each variable measured is held in one column
  - each different observation of a variable is in a different row
+
+you can read the dataset directly into R by executing the following code in your R environment:
+
+address <- "https://s3.amazonaws.com/coursera-uploads/user-677cb05197d0e5a7c3dfccf0/975115/asst-3/0f4751c047f511e5b4f493f87953772f.txt"</br>
+address <- sub("^https", "http", address)</br>
+data <- read.table(url(address), header = TRUE)</br>
+View(data)
  
  ## Transformations 
  
